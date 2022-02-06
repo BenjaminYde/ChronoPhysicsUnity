@@ -14,8 +14,8 @@ namespace ChronoUnity
         // .. FIELDS
         
         [Header("Settings")]
-        public float StepTime = 0.01f;
-        public ChSolver.Type SolverType = ChSolver.Type.PSOR;
+        public float StepTime = 0.005f;
+        public NscSolverType SolverType = NscSolverType.Iterative_VI_PSOR;
         public bool UseSleeping = false;
         private ChSystem system;
         private readonly HashSet<RigidBody> rigidBodies = new HashSet<RigidBody>();
@@ -51,7 +51,39 @@ namespace ChronoUnity
             this.system.SetMaxPenetrationRecoverySpeed(1);
             this.system.SetUseSleeping(UseSleeping);
 
-            this.system.SetSolverType(SolverType);
+            // set solver type
+            // these are the solver types that work with NSC
+            // see SetSolverType() at https://api.projectchrono.org/classchrono_1_1_ch_system.html#ac80b36efe35b16052bd5f356ba7e65ba
+            switch (SolverType)
+            {
+                case NscSolverType.Iterative_VI_APGD:
+                    this.system.SetSolver(new ChSolverAPGD());
+                    break;
+                case NscSolverType.Iterative_VI_BB:
+                    this.system.SetSolver(new ChSolverBB());
+                    break;
+                case NscSolverType.Iterative_VI_PSOR:
+                    this.system.SetSolver(new ChSolverPSOR());
+                    break;
+                case NscSolverType.Iterative_VI_PJACOBI:
+                    this.system.SetSolver(new ChSolverPJacobi());
+                    break;
+                case NscSolverType.Iterative_LS_BICGSTAB:
+                    this.system.SetSolver(new ChSolverBiCGSTAB());
+                    break;
+                case NscSolverType.Iterative_LS_GMRES:
+                    this.system.SetSolver(new ChSolverGMRES());
+                    break;
+                case NscSolverType.Iterative_LS_MINRES:
+                    this.system.SetSolver(new ChSolverMINRES());
+                    break;
+                /*case NscSolverType.Direct_LS_SPARSELU: // this one fails (no collision?)
+                    this.system.SetSolver(new ChSolverSparseLU());
+                    break;*/
+                case NscSolverType.Direct_LS_SPARSEQR:
+                    this.system.SetSolver(new ChSolverSparseQR());
+                    break;
+            }
 
             // finish
             staticSystem = this;
