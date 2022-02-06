@@ -24,13 +24,21 @@ namespace ChronoUnity
             
             var thisTransform = this.transform;
 
-            // set settings
+            // set settings (body)
             body.SetCollide(true);
             body.SetBodyFixed(isFixed);
             body.SetDensity(1 * thisTransform.localScale.magnitude);
+            body.SetUseSleeping(true);
             
-            var material = ChMaterialSurface.DefaultMaterial(ChContactMethod.NSC);
-
+            // set settings (material)
+            var material = new ChMaterialSurfaceNSC();
+            material.SetFriction(0.3f);
+            //material.SetSfriction(0.1f);
+            material.SetRestitution(0);
+            material.SetCompliance(0);
+            material.SetComplianceT(0);
+            material.SetDampingF(0.2f);
+            
             // set position
             var position = thisTransform.position;
             body.SetPos(new ChVectorD(position.x, position.y, position.z));

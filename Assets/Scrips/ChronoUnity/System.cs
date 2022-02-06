@@ -15,7 +15,8 @@ namespace ChronoUnity
         
         [Header("Settings")]
         public float StepTime = 0.01f;
-        
+        public ChSolver.Type SolverType = ChSolver.Type.PSOR;
+        public bool UseSleeping = false;
         private ChSystem system;
         private readonly HashSet<RigidBody> rigidBodies = new HashSet<RigidBody>();
         
@@ -46,7 +47,11 @@ namespace ChronoUnity
             // set parameters
             this.system.SetChTime(0);
             this.system.SetStepMax(StepTime*2);
-            this.system.SetSolverMaxIterations(30);
+            this.system.SetSolverMaxIterations(40);
+            this.system.SetMaxPenetrationRecoverySpeed(1);
+            this.system.SetUseSleeping(UseSleeping);
+
+            this.system.SetSolverType(SolverType);
 
             // finish
             staticSystem = this;
