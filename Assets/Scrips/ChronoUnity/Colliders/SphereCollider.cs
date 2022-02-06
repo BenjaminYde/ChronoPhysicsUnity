@@ -4,15 +4,9 @@ namespace ChronoUnity
 {
     public class SphereCollider : ACollider
     {
-        // .. PROPERTIES
-
-        public float Radius => radius;
-        
         // .. FIELDS
 
-        [Header("Settings")] 
-        [SerializeField] 
-        private float radius = 0.5f;
+        public float Radius = 0.5f;
         
         // .. DEBUG
 
@@ -22,7 +16,7 @@ namespace ChronoUnity
             Gizmos.matrix = Matrix4x4.TRS(thisTransform.position, thisTransform.rotation, Vector3.one);
 
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(Vector3.zero, this.radius + 0.001f);
+            Gizmos.DrawWireSphere(Vector3.zero, Radius + 0.001f);
         }
     }
 }

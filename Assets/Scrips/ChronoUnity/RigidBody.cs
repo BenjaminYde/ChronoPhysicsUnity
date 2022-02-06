@@ -1,4 +1,5 @@
 ﻿using System;
+using ChronoUnity.Utils;
 using UnityEngine;
 
 namespace ChronoUnity
@@ -56,18 +57,46 @@ namespace ChronoUnity
             var collisionModel = body.GetCollisionModel();
             foreach (var collider in colliders)
             {
+                // box c
                 if (collider is BoxCollider boxCollider)
                 {
                     var halfSize = boxCollider.Size/2;
                     var scale = boxCollider.transform.localScale;
                     collisionModel.AddBox(material, halfSize.x * scale.x, halfSize.y * scale.y, halfSize.z * scale.z);
                 }
+                // sphere vertices
                 else if (collider is SphereCollider sphereCollider)
                 {
                     collisionModel.AddSphere(material, sphereCollider.Radius);
                 }
+                // mesh collider
+                else if (collider is MeshCollider meshCollider)
+                {
+                    // get mesh
+                    var mesh = meshCollider.Mesh;
+
+                    // if convex
+                    if (meshCollider.IsConvex)
+                    {
+                        var vertices = new vector_ChVectorD();
+                        foreach (var vertex in mesh.vertices)
+                        {
+                            vertices.Add(new ChVectorD(vertex.x, vertex.y, vertex.z));
+                        }
+                        collisionModel.AddConvexHull(material, vertices);
+                    }
+                    // if not convex
+                    else
+                    {
+                        var chronoMesh = MeshUtils.CreateChTriangleMesh(mesh);
+                        collisionModel.AddTriangleMesh(material, chronoMesh, false, false);
+                    }
+                }
             }
             
+            // build collision model
+            collisionModel.BuildModel();
+
             // finish
             this.isInitialized = true;
         }
