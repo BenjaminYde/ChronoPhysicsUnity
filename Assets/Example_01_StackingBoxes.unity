@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f2daaae37a9aa49a7592301688ebe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StepTime: 0.005
+  StepTime: 0.01
   SolverType: 0
   UseSleeping: 0
 --- !u!4 &2116511515

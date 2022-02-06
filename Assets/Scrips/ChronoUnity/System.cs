@@ -17,6 +17,7 @@ namespace ChronoUnity
         public float StepTime = 0.005f;
         public NscSolverType SolverType = NscSolverType.Iterative_VI_PSOR;
         public bool UseSleeping = false;
+        
         private ChSystem system;
         private readonly HashSet<RigidBody> rigidBodies = new HashSet<RigidBody>();
         

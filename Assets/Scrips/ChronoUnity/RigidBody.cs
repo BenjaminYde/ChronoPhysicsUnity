@@ -16,7 +16,7 @@ namespace ChronoUnity
         
         // .. INITIALIZATION
         
-        private void TryInitialize()
+        public void Initialize()
         {
             // check if initialized
             if (isInitialized)
@@ -41,7 +41,13 @@ namespace ChronoUnity
             
             // set position
             var position = thisTransform.position;
-            body.SetPos(new ChVectorD(position.x, position.y, position.z));
+            var positionChronoBody = new ChVectorD(position.x, position.y, position.z);
+            body.SetPos(positionChronoBody);
+
+            // set rotation
+            var rotationGo = thisTransform.rotation;
+            var rotationChronoBody = new ChQuaternionD(rotationGo.w, rotationGo.x, rotationGo.y, rotationGo.z);
+            body.SetRot(rotationChronoBody);
             
             // get all colliders (components from game object)
             this.colliders = GetComponents<ACollider>();
@@ -56,6 +62,10 @@ namespace ChronoUnity
                     var scale = boxCollider.transform.localScale;
                     collisionModel.AddBox(material, halfSize.x * scale.x, halfSize.y * scale.y, halfSize.z * scale.z);
                 }
+                else if (collider is SphereCollider sphereCollider)
+                {
+                    collisionModel.AddSphere(material, sphereCollider.Radius);
+                }
             }
             
             // finish
@@ -66,7 +76,7 @@ namespace ChronoUnity
 
         private void Awake()
         {
-            TryInitialize();
+            Initialize();
         }
 
         private void Start()
@@ -82,13 +92,13 @@ namespace ChronoUnity
         
         public ACollider[] GetColliders()
         {
-            TryInitialize();
+            Initialize();
             return this.colliders;
         }
 
         public ChBody GetBody()
         {
-            TryInitialize();
+            Initialize();
             return body;
         }
     }
