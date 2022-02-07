@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ChronoUnity.Utils;
 using UnityEngine;
 
 namespace ChronoUnity
@@ -115,16 +116,15 @@ namespace ChronoUnity
             // set transform of simulated rigid bodies
             foreach (var rigidBody in rigidBodies)
             {
+                // get transform of chrono
                 var body = rigidBody.GetBody();
                 var chBodyPosition = body.GetPos();
                 var chBodyRotation = body.GetRot();
                 
+                // set transform of rigidbody
                 var rigidBodyTransform = rigidBody.transform;
-                
-                var unityBodyPosition = new Vector3((float)chBodyPosition.x, (float)chBodyPosition.y, (float)chBodyPosition.z);
-                rigidBodyTransform.position = unityBodyPosition;
-                var unityBodyRotation = new UnityEngine.Quaternion((float)chBodyRotation.e1, (float)chBodyRotation.e2, (float)chBodyRotation.e3, (float)chBodyRotation.e0);
-                rigidBodyTransform.rotation = unityBodyRotation;
+                rigidBodyTransform.position = chBodyPosition.ToUnityVector3();
+                rigidBodyTransform.rotation = chBodyRotation.ToUnityQuaternion();
             }
         }
 

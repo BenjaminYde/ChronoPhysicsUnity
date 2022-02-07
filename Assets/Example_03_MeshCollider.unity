@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fb38e645b14922b578a0f8ddc4f5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsConvex: 1
+  IsConvex: 0
   Mesh: {fileID: -2432090755550338912, guid: e97bfe03186521d4987e01cd8640ed6a, type: 3}
 --- !u!23 &609782871
 MeshRenderer:

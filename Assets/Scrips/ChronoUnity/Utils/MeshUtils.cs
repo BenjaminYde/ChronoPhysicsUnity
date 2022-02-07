@@ -13,13 +13,9 @@ namespace ChronoUnity.Utils
             
             for (int it = 0; it < triangles.Length; it+=3)
             {
-                Vector3 p1 = vertices[triangles[it + 0]];
-                Vector3 p2 = vertices[triangles[it + 1]];
-                Vector3 p3 = vertices[triangles[it + 2]];
-
-                ChVectorD point1 = new ChVectorD(p1.x, p1.y, p1.z);
-                ChVectorD point2 = new ChVectorD(p2.x, p2.y, p2.z);
-                ChVectorD point3 = new ChVectorD(p3.x, p3.y, p3.z);
+                ChVectorD point1 = vertices[triangles[it + 0]].ToChronoVector3();
+                ChVectorD point2 = vertices[triangles[it + 1]].ToChronoVector3();
+                ChVectorD point3 = vertices[triangles[it + 2]].ToChronoVector3();
 
                 var triangle = new ChTriangle(point1, point2, point3);
                 chTriangleMesh.addTriangle(triangle);

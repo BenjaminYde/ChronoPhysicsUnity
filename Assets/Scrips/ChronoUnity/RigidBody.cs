@@ -41,14 +41,10 @@ namespace ChronoUnity
             material.SetDampingF(0.2f);
             
             // set position
-            var position = thisTransform.position;
-            var positionChronoBody = new ChVectorD(position.x, position.y, position.z);
-            body.SetPos(positionChronoBody);
+            body.SetPos(thisTransform.position.ToChronoVector3());
 
             // set rotation
-            var rotationGo = thisTransform.rotation;
-            var rotationChronoBody = new ChQuaternionD(rotationGo.w, rotationGo.x, rotationGo.y, rotationGo.z);
-            body.SetRot(rotationChronoBody);
+            body.SetRot(thisTransform.rotation.ToChronoQuaternion());
             
             // get all colliders (components from game object)
             this.colliders = GetComponents<ACollider>();
