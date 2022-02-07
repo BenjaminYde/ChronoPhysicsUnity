@@ -113,19 +113,8 @@ namespace ChronoUnity
             // do simulation step
             system.DoStepDynamics(StepTime);
             
-            // set transform of simulated rigid bodies
-            foreach (var rigidBody in rigidBodies)
-            {
-                // get transform of chrono
-                var body = rigidBody.GetBody();
-                var chBodyPosition = body.GetPos();
-                var chBodyRotation = body.GetRot();
-                
-                // set transform of rigidbody
-                var rigidBodyTransform = rigidBody.transform;
-                rigidBodyTransform.position = chBodyPosition.ToUnityVector3();
-                rigidBodyTransform.rotation = chBodyRotation.ToUnityQuaternion();
-            }
+            // sync bodies
+            SyncTransformChronoBodiesToUnityBodies();
         }
 
         // .. STATIC PUBLIC
@@ -144,6 +133,17 @@ namespace ChronoUnity
             var body = rigidBody.GetBody();
             system.Add(body);
             this.rigidBodies.Add(rigidBody);
+        }
+        
+        // .. PRIVATE
+
+        private void SyncTransformChronoBodiesToUnityBodies()
+        {
+            // set transform of simulated rigid bodies
+            foreach (var rigidBody in rigidBodies)
+            {
+                rigidBody.SyncChronoTransformToUnityTransform();
+            }
         }
     }
 }

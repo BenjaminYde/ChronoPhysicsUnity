@@ -13,6 +13,8 @@ namespace ChronoUnity
 
         private ACollider[] colliders = Array.Empty<ACollider>();
         private ChBody body = new ChBody();
+        private Transform thisTransform = null;
+        
         private bool isInitialized = false;
         
         // .. INITIALIZATION
@@ -23,7 +25,7 @@ namespace ChronoUnity
             if (isInitialized)
                 return;
             
-            var thisTransform = this.transform;
+            thisTransform = this.transform;
 
             // set settings (body)
             body.SetCollide(true);
@@ -125,6 +127,18 @@ namespace ChronoUnity
         {
             Initialize();
             return body;
+        }
+
+        public void SyncChronoTransformToUnityTransform()
+        {
+            // get transform of chrono
+            var body = GetBody();
+            var chBodyPosition = body.GetPos();
+            var chBodyRotation = body.GetRot();
+                
+            // set transform of rigidbody
+            thisTransform.position = chBodyPosition.ToUnityVector3();
+            thisTransform.rotation = chBodyRotation.ToUnityQuaternion();
         }
     }
 }
