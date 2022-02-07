@@ -25,5 +25,15 @@ namespace ChronoUnity.Utils
 
             return chTriangleMesh;
         }
+
+        public static vector_ChVectorD CreateArrayChVector3(Vector3[] vertices)
+        {
+            var chVertices = new vector_ChVectorD();
+            foreach (var vertex in vertices)
+            {
+                chVertices.Add(vertex.ToChronoVector3());
+            }
+            return chVertices;
+        }
     }
 }

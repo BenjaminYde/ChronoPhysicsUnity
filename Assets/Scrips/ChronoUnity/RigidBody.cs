@@ -76,11 +76,7 @@ namespace ChronoUnity
                     // if convex
                     if (meshCollider.IsConvex)
                     {
-                        var vertices = new vector_ChVectorD();
-                        foreach (var vertex in mesh.vertices)
-                        {
-                            vertices.Add(new ChVectorD(vertex.x, vertex.y, vertex.z));
-                        }
+                        var vertices = MeshUtils.CreateArrayChVector3(mesh.vertices);
                         collisionModel.AddConvexHull(material, vertices);
                     }
                     // if not convex

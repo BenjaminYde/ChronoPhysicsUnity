@@ -8,12 +8,20 @@ namespace ChronoUnity
 
         public bool IsConvex = false;
         public Mesh Mesh = null;
-
+        
+        
         // .. DEBUG
 
         private void OnDrawGizmosSelected()
         {
-            // todo 
+            //var collisionM = nativeBody.GetCollisionModel();
+            
+            // see source cpp:
+            // ChCollisionModelBullet
+            // - ChCollisionModelBullet::AddConvexHull
+            // -- bt_utils::ChConvexHullLibraryWrapper.ComputeHull(...)
+            // 
+            
         }
     }
 }
