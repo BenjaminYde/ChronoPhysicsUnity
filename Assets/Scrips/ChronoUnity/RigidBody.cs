@@ -86,6 +86,9 @@ namespace ChronoUnity
                         collisionModel.AddTriangleMesh(material, chronoMesh, false, false);
                     }
                 }
+                
+                // inject body
+                collider.Internal_InjectBody(this.body);
             }
             
             // build collision model
