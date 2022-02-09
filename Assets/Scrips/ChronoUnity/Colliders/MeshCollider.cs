@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using ChronoUnity.Debug;
+using UnityEditor;
+using UnityEngine;
 
 namespace ChronoUnity
 {
@@ -9,19 +11,42 @@ namespace ChronoUnity
         public bool IsConvex = false;
         public Mesh Mesh = null;
         
-        
+        // .. INITIALIZATION
+
+        internal override void Internal_Initialize()
+        {
+            var drawer = new BodyDrawer(this.rigidBody);
+            this.system.AddGizmoDrawer(drawer);
+        }
+
         // .. DEBUG
 
-        private void OnDrawGizmosSelected()
+        private class BodyDrawer : AGizmoDrawer
         {
-            //var collisionM = nativeBody.GetCollisionModel();
+            private readonly RigidBody rigidBody;
             
-            // see source cpp:
-            // ChCollisionModelBullet
-            // - ChCollisionModelBullet::AddConvexHull
-            // -- bt_utils::ChConvexHullLibraryWrapper.ComputeHull(...)
-            // 
-            
+            public BodyDrawer(RigidBody rigidBody)
+            {
+                this.rigidBody = rigidBody;
+            }
+
+            public override void BeforeDraw()
+            {
+                // check if can draw
+                var activeObject = Selection.activeGameObject;
+                bool canDraw = activeObject != null &&
+                               activeObject.GetInstanceID() == rigidBody.gameObject.GetInstanceID();
+
+                // set visualization
+                var nativeBody = rigidBody.GetBody();
+                nativeBody.SetShowCollisionMesh(canDraw); // this does not work? (obsolete in cpp source)
+            }
+
+            protected override void DrawLine(Vector3 @from, Vector3 to)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(from, to);
+            }
         }
     }
 }

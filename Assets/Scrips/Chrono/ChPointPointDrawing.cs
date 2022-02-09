@@ -13,7 +13,7 @@ public class ChPointPointDrawing : ChLineShape {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   private bool swigCMemOwnDerived;
 
-  internal ChPointPointDrawing(global::System.IntPtr cPtr, bool cMemoryOwn) : base(ChronoEngine_csharpPINVOKE.ChPointPointDrawing_SWIGSmartPtrUpcast(cPtr), true) {
+  internal ChPointPointDrawing(global::System.IntPtr cPtr, bool cMemoryOwn) : base(corePINVOKE.ChPointPointDrawing_SWIGSmartPtrUpcast(cPtr), true) {
     swigCMemOwnDerived = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
@@ -27,7 +27,7 @@ public class ChPointPointDrawing : ChLineShape {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwnDerived) {
           swigCMemOwnDerived = false;
-          ChronoEngine_csharpPINVOKE.delete_ChPointPointDrawing(swigCPtr);
+          corePINVOKE.delete_ChPointPointDrawing(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -36,8 +36,8 @@ public class ChPointPointDrawing : ChLineShape {
   }
 
   public override void Update(ChPhysicsItem updater, ChCoordsysD coords) {
-    ChronoEngine_csharpPINVOKE.ChPointPointDrawing_Update(swigCPtr, ChPhysicsItem.getCPtr(updater), ChCoordsysD.getCPtr(coords));
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChPointPointDrawing_Update(swigCPtr, ChPhysicsItem.getCPtr(updater), ChCoordsysD.getCPtr(coords));
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
 }

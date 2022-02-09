@@ -6,14 +6,23 @@ namespace ChronoUnity
     {
         // .. FIELDS
 
-        protected ChBody nativeBody { get; private set; }
-        
+        protected RigidBody rigidBody { get; private set; }
+        protected System system { get; private set; }
+
         // .. INITIALIZATION
 
-        internal void Internal_InjectBody(ChBody chronoBody)
+        internal virtual void Internal_Initialize()
         {
-            this.nativeBody = chronoBody;
+        }
 
+        internal void Internal_InjectSystem(System system)
+        {
+            this.system = system;
+        }
+
+        internal void Internal_InjectBody(RigidBody rigidBody)
+        {
+            this.rigidBody = rigidBody;
         }
     }
 }

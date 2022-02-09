@@ -41,7 +41,7 @@ namespace ChronoUnity
             material.SetCompliance(0);
             material.SetComplianceT(0);
             material.SetDampingF(0.2f);
-            
+
             // set position
             body.SetPos(thisTransform.position.ToChronoVector3());
 
@@ -86,9 +86,6 @@ namespace ChronoUnity
                         collisionModel.AddTriangleMesh(material, chronoMesh, false, false);
                     }
                 }
-                
-                // inject body
-                collider.Internal_InjectBody(this.body);
             }
             
             // build collision model
@@ -109,7 +106,7 @@ namespace ChronoUnity
         {
             // get system
             var system = System.GetSystem();
-            
+
             // add rigidbody to system
             system.AddRigidBody(this);
         }

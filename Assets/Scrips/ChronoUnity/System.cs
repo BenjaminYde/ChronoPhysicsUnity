@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ChronoUnity.Debug;
 using UnityEngine;
 
 namespace ChronoUnity
@@ -20,6 +21,7 @@ namespace ChronoUnity
         
         private ChSystem system;
         private readonly HashSet<RigidBody> rigidBodies = new HashSet<RigidBody>();
+        private readonly List<AGizmoDrawer> gizmoDrawers = new List<AGizmoDrawer>();
         
         // .. INITIALIZATION
 
@@ -36,10 +38,10 @@ namespace ChronoUnity
             isInitialized = false;
         }
 
-        private void InitializeSystem()
+        private void InitializeSystem(bool forceInitialize = false)
         {
             // check if initialized already
-            if (isInitialized)
+            if (!forceInitialize && isInitialized)
                 throw new Exception("System is already initialized! Please dispose first!");
 
             // create system
@@ -95,7 +97,7 @@ namespace ChronoUnity
         
         private void Awake()
         {
-            InitializeSystem();
+            InitializeSystem(true);
         }
 
         private void OnDestroy()
@@ -116,6 +118,23 @@ namespace ChronoUnity
             SyncTransformChronoBodiesToUnityBodies();
         }
 
+        private void OnDrawGizmos()
+        {
+            // check if can draw
+            if(!Application.isPlaying)
+                return;
+
+            foreach (var gizmoDrawer in gizmoDrawers)
+            {
+                gizmoDrawer.BeforeDraw();
+            }
+            
+            // execute draw debug
+            var mode = ChCollisionSystem.VisualizationModes.VIS_Shapes;
+            var collisionSystem = system.GetCollisionSystem();
+            collisionSystem.Visualize((int)mode);
+        }
+
         // .. STATIC PUBLIC
 
         public static System GetSystem()
@@ -129,11 +148,29 @@ namespace ChronoUnity
         
         public void AddRigidBody(RigidBody rigidBody)
         {
-            var body = rigidBody.GetBody();
-            system.Add(body);
+            // get native body
+            var nativeBody = rigidBody.GetBody();
+            
+            // add rigid body to system
+            this.system.Add(nativeBody);
             this.rigidBodies.Add(rigidBody);
+
+            // initialize colliders
+            var colliders = rigidBody.GetColliders();
+            foreach (var collider in colliders)
+            {
+                collider.Internal_InjectBody(rigidBody);
+                collider.Internal_InjectSystem(this);
+                collider.Internal_Initialize();
+            }
         }
-        
+
+        public void AddGizmoDrawer(AGizmoDrawer gizmoDrawer)
+        {
+            this.gizmoDrawers.Add(gizmoDrawer);
+            this.system.GetCollisionSystem().RegisterVisualizationCallback(gizmoDrawer);
+        }
+
         // .. PRIVATE
 
         private void SyncTransformChronoBodiesToUnityBodies()

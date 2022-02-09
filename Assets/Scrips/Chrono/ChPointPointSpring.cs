@@ -13,7 +13,7 @@ public class ChPointPointSpring : ChPointPointDrawing {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   private bool swigCMemOwnDerived;
 
-  internal ChPointPointSpring(global::System.IntPtr cPtr, bool cMemoryOwn) : base(ChronoEngine_csharpPINVOKE.ChPointPointSpring_SWIGSmartPtrUpcast(cPtr), true) {
+  internal ChPointPointSpring(global::System.IntPtr cPtr, bool cMemoryOwn) : base(corePINVOKE.ChPointPointSpring_SWIGSmartPtrUpcast(cPtr), true) {
     swigCMemOwnDerived = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
@@ -27,7 +27,7 @@ public class ChPointPointSpring : ChPointPointDrawing {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwnDerived) {
           swigCMemOwnDerived = false;
-          ChronoEngine_csharpPINVOKE.delete_ChPointPointSpring(swigCPtr);
+          corePINVOKE.delete_ChPointPointSpring(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -35,20 +35,20 @@ public class ChPointPointSpring : ChPointPointDrawing {
     }
   }
 
-  public ChPointPointSpring(double mradius, int mresolution, double mturns) : this(ChronoEngine_csharpPINVOKE.new_ChPointPointSpring__SWIG_0(mradius, mresolution, mturns), true) {
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+  public ChPointPointSpring(double mradius, int mresolution, double mturns) : this(corePINVOKE.new_ChPointPointSpring__SWIG_0(mradius, mresolution, mturns), true) {
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public ChPointPointSpring(double mradius, int mresolution) : this(ChronoEngine_csharpPINVOKE.new_ChPointPointSpring__SWIG_1(mradius, mresolution), true) {
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+  public ChPointPointSpring(double mradius, int mresolution) : this(corePINVOKE.new_ChPointPointSpring__SWIG_1(mradius, mresolution), true) {
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public ChPointPointSpring(double mradius) : this(ChronoEngine_csharpPINVOKE.new_ChPointPointSpring__SWIG_2(mradius), true) {
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+  public ChPointPointSpring(double mradius) : this(corePINVOKE.new_ChPointPointSpring__SWIG_2(mradius), true) {
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public ChPointPointSpring() : this(ChronoEngine_csharpPINVOKE.new_ChPointPointSpring__SWIG_3(), true) {
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+  public ChPointPointSpring() : this(corePINVOKE.new_ChPointPointSpring__SWIG_3(), true) {
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
 }

@@ -13,7 +13,7 @@ public class ChVisualMaterial : ChAsset {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   private bool swigCMemOwnDerived;
 
-  internal ChVisualMaterial(global::System.IntPtr cPtr, bool cMemoryOwn) : base(ChronoEngine_csharpPINVOKE.ChVisualMaterial_SWIGSmartPtrUpcast(cPtr), true) {
+  internal ChVisualMaterial(global::System.IntPtr cPtr, bool cMemoryOwn) : base(corePINVOKE.ChVisualMaterial_SWIGSmartPtrUpcast(cPtr), true) {
     swigCMemOwnDerived = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
@@ -27,7 +27,7 @@ public class ChVisualMaterial : ChAsset {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwnDerived) {
           swigCMemOwnDerived = false;
-          ChronoEngine_csharpPINVOKE.delete_ChVisualMaterial(swigCPtr);
+          corePINVOKE.delete_ChVisualMaterial(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -35,216 +35,216 @@ public class ChVisualMaterial : ChAsset {
     }
   }
 
-  public ChVisualMaterial() : this(ChronoEngine_csharpPINVOKE.new_ChVisualMaterial(), true) {
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+  public ChVisualMaterial() : this(corePINVOKE.new_ChVisualMaterial(), true) {
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetAmbientColor(ChVectorF rgb) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetAmbientColor(swigCPtr, ChVectorF.getCPtr(rgb));
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetAmbientColor(swigCPtr, ChVectorF.getCPtr(rgb));
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetDiffuseColor(ChVectorF rgb) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetDiffuseColor(swigCPtr, ChVectorF.getCPtr(rgb));
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetDiffuseColor(swigCPtr, ChVectorF.getCPtr(rgb));
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetSpecularColor(ChVectorF rgb) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetSpecularColor(swigCPtr, ChVectorF.getCPtr(rgb));
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetSpecularColor(swigCPtr, ChVectorF.getCPtr(rgb));
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetSpecularExponent(float exponent) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetSpecularExponent(swigCPtr, exponent);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetSpecularExponent(swigCPtr, exponent);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetTransparency(float tr) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetTransparency(swigCPtr, tr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetTransparency(swigCPtr, tr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetKdTexture(string filename) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetKdTexture(swigCPtr, filename);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetKdTexture(swigCPtr, filename);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetKsTexture(string filename) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetKsTexture(swigCPtr, filename);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetKsTexture(swigCPtr, filename);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetNormalMapTexture(string filename) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetNormalMapTexture(swigCPtr, filename);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetNormalMapTexture(swigCPtr, filename);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetMetallicTexture(string filename) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetMetallicTexture(swigCPtr, filename);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetMetallicTexture(swigCPtr, filename);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetRoughnessTexture(string filename) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetRoughnessTexture(swigCPtr, filename);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetRoughnessTexture(swigCPtr, filename);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetOpacityTexture(string filename) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetOpacityTexture(swigCPtr, filename);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetOpacityTexture(swigCPtr, filename);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetFresnelExp(float exp) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetFresnelExp(swigCPtr, exp);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetFresnelExp(swigCPtr, exp);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetFresnelMax(float max) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetFresnelMax(swigCPtr, max);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetFresnelMax(swigCPtr, max);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetFresnelMin(float min) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetFresnelMin(swigCPtr, min);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetFresnelMin(swigCPtr, min);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetRoughness(float r) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetRoughness(swigCPtr, r);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetRoughness(swigCPtr, r);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetMetallic(float m) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetMetallic(swigCPtr, m);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetMetallic(swigCPtr, m);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetUseSpecularWorkflow(bool s) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetUseSpecularWorkflow(swigCPtr, s);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetUseSpecularWorkflow(swigCPtr, s);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetClassID(ushort id) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetClassID(swigCPtr, id);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetClassID(swigCPtr, id);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public void SetInstanceID(ushort id) {
-    ChronoEngine_csharpPINVOKE.ChVisualMaterial_SetInstanceID(swigCPtr, id);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualMaterial_SetInstanceID(swigCPtr, id);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public ChVectorF GetAmbientColor() {
-    ChVectorF ret = new ChVectorF(ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetAmbientColor(swigCPtr), true);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    ChVectorF ret = new ChVectorF(corePINVOKE.ChVisualMaterial_GetAmbientColor(swigCPtr), true);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public ChVectorF GetDiffuseColor() {
-    ChVectorF ret = new ChVectorF(ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetDiffuseColor(swigCPtr), true);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    ChVectorF ret = new ChVectorF(corePINVOKE.ChVisualMaterial_GetDiffuseColor(swigCPtr), true);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public ChVectorF GetSpecularColor() {
-    ChVectorF ret = new ChVectorF(ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetSpecularColor(swigCPtr), true);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    ChVectorF ret = new ChVectorF(corePINVOKE.ChVisualMaterial_GetSpecularColor(swigCPtr), true);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public float GetSpecularExponent() {
-    float ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetSpecularExponent(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    float ret = corePINVOKE.ChVisualMaterial_GetSpecularExponent(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public float GetTransparency() {
-    float ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetTransparency(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    float ret = corePINVOKE.ChVisualMaterial_GetTransparency(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public string GetKdTexture() {
-    string ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetKdTexture(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    string ret = corePINVOKE.ChVisualMaterial_GetKdTexture(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public string GetKsTexture() {
-    string ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetKsTexture(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    string ret = corePINVOKE.ChVisualMaterial_GetKsTexture(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public string GetNormalMapTexture() {
-    string ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetNormalMapTexture(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    string ret = corePINVOKE.ChVisualMaterial_GetNormalMapTexture(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public string GetMetallicTexture() {
-    string ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetMetallicTexture(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    string ret = corePINVOKE.ChVisualMaterial_GetMetallicTexture(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public string GetRoughnessTexture() {
-    string ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetRoughnessTexture(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    string ret = corePINVOKE.ChVisualMaterial_GetRoughnessTexture(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public string GetOpacityTexture() {
-    string ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetOpacityTexture(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    string ret = corePINVOKE.ChVisualMaterial_GetOpacityTexture(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public float GetFresnelExp() {
-    float ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetFresnelExp(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    float ret = corePINVOKE.ChVisualMaterial_GetFresnelExp(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public float GetFresnelMax() {
-    float ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetFresnelMax(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    float ret = corePINVOKE.ChVisualMaterial_GetFresnelMax(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public float GetFresnelMin() {
-    float ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetFresnelMin(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    float ret = corePINVOKE.ChVisualMaterial_GetFresnelMin(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public float GetRoughness() {
-    float ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetRoughness(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    float ret = corePINVOKE.ChVisualMaterial_GetRoughness(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public float GetMetallic() {
-    float ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetMetallic(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    float ret = corePINVOKE.ChVisualMaterial_GetMetallic(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public bool GetUseSpecularWorkflow() {
-    bool ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetUseSpecularWorkflow(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    bool ret = corePINVOKE.ChVisualMaterial_GetUseSpecularWorkflow(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public ushort GetClassID() {
-    ushort ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetClassID(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    ushort ret = corePINVOKE.ChVisualMaterial_GetClassID(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public ushort GetInstanceID() {
-    ushort ret = ChronoEngine_csharpPINVOKE.ChVisualMaterial_GetInstanceID(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    ushort ret = corePINVOKE.ChVisualMaterial_GetInstanceID(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 

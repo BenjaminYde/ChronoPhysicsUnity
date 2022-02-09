@@ -13,7 +13,7 @@ public class ChPointPointSegment : ChPointPointDrawing {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   private bool swigCMemOwnDerived;
 
-  internal ChPointPointSegment(global::System.IntPtr cPtr, bool cMemoryOwn) : base(ChronoEngine_csharpPINVOKE.ChPointPointSegment_SWIGSmartPtrUpcast(cPtr), true) {
+  internal ChPointPointSegment(global::System.IntPtr cPtr, bool cMemoryOwn) : base(corePINVOKE.ChPointPointSegment_SWIGSmartPtrUpcast(cPtr), true) {
     swigCMemOwnDerived = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
@@ -27,7 +27,7 @@ public class ChPointPointSegment : ChPointPointDrawing {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwnDerived) {
           swigCMemOwnDerived = false;
-          ChronoEngine_csharpPINVOKE.delete_ChPointPointSegment(swigCPtr);
+          corePINVOKE.delete_ChPointPointSegment(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -35,8 +35,8 @@ public class ChPointPointSegment : ChPointPointDrawing {
     }
   }
 
-  public ChPointPointSegment() : this(ChronoEngine_csharpPINVOKE.new_ChPointPointSegment(), true) {
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+  public ChPointPointSegment() : this(corePINVOKE.new_ChPointPointSegment(), true) {
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
 }

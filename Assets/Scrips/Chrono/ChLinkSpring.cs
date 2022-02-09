@@ -43,7 +43,7 @@ public class ChLinkSpring : ChLinkMarkers {
     if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public override ChObj Clone() {
+  public ChObj Clone() {
     global::System.IntPtr cPtr = ChronoEngine_csharpPINVOKE.ChLinkSpring_Clone(swigCPtr);
     ChLinkSpring ret = (cPtr == global::System.IntPtr.Zero) ? null : new ChLinkSpring(cPtr, true);
     if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();

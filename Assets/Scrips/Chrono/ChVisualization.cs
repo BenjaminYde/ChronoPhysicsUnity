@@ -13,7 +13,7 @@ public class ChVisualization : ChAsset {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   private bool swigCMemOwnDerived;
 
-  internal ChVisualization(global::System.IntPtr cPtr, bool cMemoryOwn) : base(ChronoEngine_csharpPINVOKE.ChVisualization_SWIGSmartPtrUpcast(cPtr), true) {
+  internal ChVisualization(global::System.IntPtr cPtr, bool cMemoryOwn) : base(corePINVOKE.ChVisualization_SWIGSmartPtrUpcast(cPtr), true) {
     swigCMemOwnDerived = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
@@ -27,7 +27,7 @@ public class ChVisualization : ChAsset {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwnDerived) {
           swigCMemOwnDerived = false;
-          ChronoEngine_csharpPINVOKE.delete_ChVisualization(swigCPtr);
+          corePINVOKE.delete_ChVisualization(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -36,84 +36,84 @@ public class ChVisualization : ChAsset {
   }
 
   public void SetVisible(bool mv) {
-    ChronoEngine_csharpPINVOKE.ChVisualization_SetVisible(swigCPtr, mv);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualization_SetVisible(swigCPtr, mv);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public bool IsVisible() {
-    bool ret = ChronoEngine_csharpPINVOKE.ChVisualization_IsVisible(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    bool ret = corePINVOKE.ChVisualization_IsVisible(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public void SetColor(ChColor mc) {
-    ChronoEngine_csharpPINVOKE.ChVisualization_SetColor(swigCPtr, ChColor.getCPtr(mc));
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualization_SetColor(swigCPtr, ChColor.getCPtr(mc));
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public ChColor GetColor() {
-    ChColor ret = new ChColor(ChronoEngine_csharpPINVOKE.ChVisualization_GetColor(swigCPtr), false);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    ChColor ret = new ChColor(corePINVOKE.ChVisualization_GetColor(swigCPtr), false);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public void SetFading(float mc) {
-    ChronoEngine_csharpPINVOKE.ChVisualization_SetFading(swigCPtr, mc);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualization_SetFading(swigCPtr, mc);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public float GetFading() {
-    float ret = ChronoEngine_csharpPINVOKE.ChVisualization_GetFading(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    float ret = corePINVOKE.ChVisualization_GetFading(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public void SetStatic(bool val) {
-    ChronoEngine_csharpPINVOKE.ChVisualization_SetStatic(swigCPtr, val);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    corePINVOKE.ChVisualization_SetStatic(swigCPtr, val);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
   }
 
   public bool IsStatic() {
-    bool ret = ChronoEngine_csharpPINVOKE.ChVisualization_IsStatic(swigCPtr);
-    if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+    bool ret = corePINVOKE.ChVisualization_IsStatic(swigCPtr);
+    if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public ChVectorD Pos {
     set {
-      ChronoEngine_csharpPINVOKE.ChVisualization_Pos_set(swigCPtr, ChVectorD.getCPtr(value));
-      if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+      corePINVOKE.ChVisualization_Pos_set(swigCPtr, ChVectorD.getCPtr(value));
+      if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      global::System.IntPtr cPtr = ChronoEngine_csharpPINVOKE.ChVisualization_Pos_get(swigCPtr);
+      global::System.IntPtr cPtr = corePINVOKE.ChVisualization_Pos_get(swigCPtr);
       ChVectorD ret = (cPtr == global::System.IntPtr.Zero) ? null : new ChVectorD(cPtr, false);
-      if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+      if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
   public ChMatrix33D Rot {
     set {
-      ChronoEngine_csharpPINVOKE.ChVisualization_Rot_set(swigCPtr, ChMatrix33D.getCPtr(value));
-      if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+      corePINVOKE.ChVisualization_Rot_set(swigCPtr, ChMatrix33D.getCPtr(value));
+      if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      global::System.IntPtr cPtr = ChronoEngine_csharpPINVOKE.ChVisualization_Rot_get(swigCPtr);
+      global::System.IntPtr cPtr = corePINVOKE.ChVisualization_Rot_get(swigCPtr);
       ChMatrix33D ret = (cPtr == global::System.IntPtr.Zero) ? null : new ChMatrix33D(cPtr, false);
-      if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+      if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
 
-  public SWIGTYPE_p_std__vectorT_std__shared_ptrT_chrono__ChVisualMaterial_t_t material_list {
+  public material_list material_list {
     set {
-      ChronoEngine_csharpPINVOKE.ChVisualization_material_list_set(swigCPtr, SWIGTYPE_p_std__vectorT_std__shared_ptrT_chrono__ChVisualMaterial_t_t.getCPtr(value));
-      if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+      corePINVOKE.ChVisualization_material_list_set(swigCPtr, material_list.getCPtr(value));
+      if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
     } 
     get {
-      global::System.IntPtr cPtr = ChronoEngine_csharpPINVOKE.ChVisualization_material_list_get(swigCPtr);
-      SWIGTYPE_p_std__vectorT_std__shared_ptrT_chrono__ChVisualMaterial_t_t ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_std__vectorT_std__shared_ptrT_chrono__ChVisualMaterial_t_t(cPtr, false);
-      if (ChronoEngine_csharpPINVOKE.SWIGPendingException.Pending) throw ChronoEngine_csharpPINVOKE.SWIGPendingException.Retrieve();
+      global::System.IntPtr cPtr = corePINVOKE.ChVisualization_material_list_get(swigCPtr);
+      material_list ret = (cPtr == global::System.IntPtr.Zero) ? null : new material_list(cPtr, false);
+      if (corePINVOKE.SWIGPendingException.Pending) throw corePINVOKE.SWIGPendingException.Retrieve();
       return ret;
     } 
   }
